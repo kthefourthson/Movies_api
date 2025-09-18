@@ -10,9 +10,10 @@ class MoviesController < ApplicationController
     render json: movies
   end 
   def create 
-    movies = movies.create( 
-    title = movies.title,
-    rating = movies.rating
+    movies = Movie.create(
+
+    title: params[:title],
+    rating: params[:rating]
     )
       render json: movies
   end
@@ -27,7 +28,7 @@ class MoviesController < ApplicationController
     end
 
     def destroy
-      movies = Movies.find(params[:id])
+      movies = Movie.find(params[:id])
   
       movies.destroy
   
